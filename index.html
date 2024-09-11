@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sytyle.css">
+    <style>
+        @media screen and (max-height: 450px) {
+    #navbar {padding-top: 15px;}
+    #navbar a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div class="top-nav"> <!-- Top-Navbar -->
+        <div id="start-top-nav">
+            <img src="img/loom_logo.png" alt="logo" width="7%">
+            <a href="#recordSDK">recordSDK</a>
+            <a href="#embedSDK">embedSDK</a>
+        </div>
+        <div id="end-top-nav">
+            <a href="#">Go to my developer account ↗</a>
+            <img src="img/Screenshot_dev.loom.com.jpeg" alt="button">
+        </div>
+    </div>
+
+    <nav id="navbar">
+        <header>recordSDK</header>
+        <ul>
+            <li><a class="nav-link" href="#Getting_started">Getting started</a></li>
+            <li><a class="nav-link" href="#Installation">Installation</a></li>
+            <li><a class="nav-link" href="#Set_up_your_recordSDK_application">Set up your recordSDK application</a></li>
+            <li><a class="nav-link" href="#SDK_Standard">SDK Standard</a></li>
+            <li><a class="nav-link" href="#SDK_Custom">SDK Custom</a></li>
+            <li><a class="nav-link" href="#Implement">Implement</a></li>
+            <li><a class="nav-link" href="#Code_walkthrough">Code walkthrough</a></li>
+            <li><a class="nav-link" href="#Imports">Imports</a></li>
+            <li><a class="nav-link" href="#Create_a_button">Create a button</a></li>
+            <li><a class="nav-link" href="#Check_if_supported">Check if supported</a></li>
+            <li><a class="nav-link" href="#Set_up_the_recordSDK">Set up the recordSDK</a></li>
+            <li><a class="nav-link" href="#Adding_event_listeners">Adding event listeners</a></li>
+            <li><a class="nav-link" href="#Inserting_the_recording">Inserting the recording</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Getting_started">
+            <header>Getting started</header><br><br>
+            <p>
+                The loomSDK is an umbrella term which refers to the recordSDK and embedSDK. The embedSDK can be used independently of the recordSDK.<br><br>
+            </p>
+            <p>
+                For the recordSDK, we offer two types of pricing & packaging: SDK Standard and SDK Custom. 
+                SDK Standard is ideal for Loom integrations and is free. SDK Custom provides infrastructure to add asynchronous video into your own application. 
+                It is a paid offering.<br><br>
+            </p>
+            <p>
+                This guide walks you through setup for both SDK Standard and SDK Custom.<br><br><br>
+            </p>
+        </section>
+
+        <section class="main-section" id="Installation">
+            <header>Installation</header><br><br>
+            <p>Install the recordSDK and embedSDK.</p><br><br>
+            <code>$ npm install @loomhq/record-sdk @loomhq/loom-embed</code><br><br><br>
+        </section>
+
+        <section class="main-section" id="Set_up_your_recordSDK_application">
+            <header>Set up your recordSDK application</header><br><br>
+            <p>To obtain an SDK Standard or SDK Custom application set up your developer account.</p><br><br>
+            <p>Learn more here about the differences between the two types of apps.</p><br><br><br>
+        </section>
+
+        <section class="main-section" id="SDK_Standard">
+            <header>SDK Standard</header><br><br>
+            <p>If you choose SDK Standard, two applications will be created:</p><br><br>
+            <ul>
+                <li>A “sandbox” app for development—this application can be used on localhost domains</li>
+                <li>A “live” app for production</li><br><br>
+            </ul>
+            <p>
+                These apps can only run on domains you provide in the input form (plus localhost for the sandbox app). 
+                Optionally, you can also implement key-pair authentication by following the steps here.
+            </p><br><br><br>
+        </section>
+
+        <section class="main-section" id="SDK_Custom">
+            <header>SDK Custom</header><br><br>
+            <p>If you choose SDK Custom, only one application will be created. This app can run against any domain because 
+                it requires key-pair authentication—follow the steps here for set up instructions.</p><br><br><br>
+        </section>
+
+        <section class="main-section" id="Implement">
+            <header>Implement</header><br><br>
+            <p>
+                The code below is all you need to set up an SDK Standard app. 
+                SDK Custom and SDK Standard apps using key-pair auth will require server side setup and a slightly different client side implementation. 
+                Follow the steps here for instructions.<br><br>
+            </p>
+            <ul>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+            </ul><br><br>
+            <code>import { setup } from "@loomhq/record-sdk";</code><br><br><br>
+            <code>import { setup } from "@loomhq/record-sdk";</code><br><br><br>
+            <code>import { setup } from "@loomhq/record-sdk";</code><br><br><br><br>
+        </section>
+
+        <section class="main-section" id="Code_walkthrough">
+            <header>Code walkthrough</header><br>
+            <p>Look at the following:</p><br>
+        </section>
+
+        <section class="main-section" id="Imports">
+            <header>Imports</header><br><br>
+            <p>
+                <em>
+                Import setup from @loomhq/record-sdk, isSupported from @loomhq/record-sdk/is-supported, and oembed from @loomhq/loom-embed. 
+                setup is used to instantiate the SDK and isSupported detects if a user’s browser is compatible with the SDK. oembed is used for handling video inserts.
+                </em>
+            </p><br><br>
+            <p id="note">
+                ⚠️NOTE<br>
+                The recordSDK should be loaded asynchronously and is not supported for SSR. Read more here.
+            </p><br><br>
+            <ul>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+            </ul><br><br>
+            <code>import { setup } from "@loomhq/record-sdk";</code><br><br><br>
+            <code>import { isSupported } from "@loomhq/record-sdk/is-supported";</code><br><br><br>
+            <code>import { oembed } from "@loomhq/loom-embed";</code><br><br><br>
+            <p id="note">
+                ⚠️NOTE<br>
+                The recordSDK depends on the MediaRecorder API and enablement of third-party cookies so it will not work in all browsers. 
+                This is why <em>isSupported</em> should be used as a check before setting up the SDK.
+            </p><br><br><br>
+        </section>
+
+        <section class="main-section" id="Create_a_button">
+            <header>Create a button</header><br><br>
+            <p>Create one or more button elements with a unique ID to trigger the recordSDK flow.</p><br>
+            <ul>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+            </ul><br><br>
+            <code>const BUTTON_ID = "loom-record-sdk-button";</code><br><br><br>
+        </section>
+
+        <section class="main-section" id="Check_if_supported">
+            <header>Check if supported</header>
+            <p>
+                The recordSDK depends on the MediaRecorder API and enablement of third-party cookies so it will not work in all browsers. 
+                This is why <em>isSupported</em> should be used as a check before setting up the SDK. If the browser is not supported, <em>an error</em> will exist.
+            </p><br><br>
+            <ul>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+            </ul><br><br>
+            <code>const { supported, error } = await isSupported();</code><br><br><br>
+        </section>
+
+        <section class="main-section" id="Set_up_the_recordSDK">
+            <header>Set up the recordSDK</header><br><br>
+            <p>
+                If the recordSDK is supported and the button you’ll attach it to exists in the DOM, call the <em>setup</em> function with a reference to your public app id. 
+                If you are using an SDK Custom app or key-pair auth with an SDK Standard app, follow the steps here. 
+                The response will be a Promise object which resolves to a <em>configureButton</em> function.
+            </p><br><br>
+            <ul>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+            </ul><br><br>
+            <code>const button = document.getElementById(BUTTON_ID);</code><br><br><br>
+        </section>
+
+        <section class="main-section" id="Adding_event_listeners">
+            <header>Adding event listeners</header><br><br>
+            <p>
+                The <em>configureButton</em> function returns an <em>SDKButton</em> object which fulfills the NodeJS event emitter definition. 
+                In this implementation, the <em>"insert-click"</em> event is invoked which will be called when the insert CTA is clicked in the post-recording view. 
+                Other event listeners include <em>"recording-start", "cancel", and "complete"</em>—see full list of listenable events.
+            </p><br><br>
+            <ul>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+            </ul><br><br>
+            <code>sdkButton.on("insert-click", async (video) => {</code><br><br><br>
+        </section>
+
+        <section class="main-section" id="Inserting_the_recording">
+            <header>Inserting the recording</header><br><br>
+            <p>
+                Use the <em>oembed</em> method from <em>@loomhq/loom-embed</em> to fetch a freshly recorded video’s metadata. 
+                This object includes an html attribute of stringified <em>HTML</em> of the iFrame embed player with Loom stylings. 
+                When a user completes a recording, the share URL will also be added to their clipboard.
+            </p><br><br>
+            <ul>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+            </ul><br><br>
+            <code>const [videoHTML, setVideoHTML] = useState("");</code><br><br>
+            <p id="note">
+                ⚠️NOTE<br>
+                <em>dangerouslySetInnerHTML</em> is React’s replacement for using <em>innerHTML</em> in the browser DOM and is named as such because in some cases it can 
+                expose users to cross-site scripting (XSS). <strong>don’t need to worry about this when parsing the HTML returned from <em>oembed.html</em></strong> since this HTML 
+                does not contain user input.
+            </p><br><br>
+        </section>
+    </main>
+</body>
+</html>
